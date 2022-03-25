@@ -1,0 +1,37 @@
+//SPDX-License-Identifier:MIT
+
+pragma solidity ^0.8.0;
+
+contract ToDoListWebsite{
+ 
+       mapping (address=>string[]) alltasks;
+  
+//adding all task by different people using different addresses
+function addTask(string memory task)public {
+                
+         alltasks[msg.sender].push() =task;
+}
+//get task by their index
+function getTask(uint number)public view returns (string memory){
+
+     return alltasks[msg.sender][number];
+ 
+}
+//get all task assigned to the address of msg.sender
+function getAllTask()public view returns(string[] memory){
+                 return  alltasks[msg.sender];
+
+}
+//to delete any task at random
+function toDeleteTask(uint index)public {
+
+     
+     string memory x = alltasks[msg.sender][index];
+        //    alltasks[msg.sender].push()
+        // alltasks[msg.sender]   =alltasks[msg.sender].[index]
+
+
+}
+
+}
+
