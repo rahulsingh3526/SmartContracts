@@ -1,5 +1,7 @@
 //SPDX-License-Identifier:MIT
 
+//SPDX-License-Identifier:MIT
+
 pragma solidity ^0.8.0;
 
 contract ToDoListWebsite{
@@ -24,14 +26,14 @@ function getAllTask()public view returns(string[] memory){
 }
 //to delete any task at random
 function toDeleteTask(uint index)public {
+    require (index < alltasks[msg.sender].length, "Array length smaller than that");
 
+        uint x = alltasks[msg.sender].length -1;
+
+    alltasks[msg.sender][index] = alltasks[msg.sender][x];
      
-     string memory x = alltasks[msg.sender][index];
-        //    alltasks[msg.sender].push()
-        // alltasks[msg.sender]   =alltasks[msg.sender].[index]
-
-
+     alltasks[msg.sender].pop();
+           
 }
 
 }
-
